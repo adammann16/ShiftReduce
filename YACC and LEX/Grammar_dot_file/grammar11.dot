@@ -1,0 +1,30 @@
+// 由 GNU Bison 3.0.2 生成。
+// 向 <bug-bison@gnu.org> 报告问题。
+// 主页：<http://www.gnu.org/software/bison/>。
+
+digraph "grammar11.y"
+{
+  node [fontname = courier, shape = box, colorscheme = paired6]
+  edge [fontname = courier]
+
+  0 [label="State 0\n\l  0 $accept: . S $end\l"]
+  0 -> 1 [style=solid label="INTEGER"]
+  0 -> 2 [style=dashed label="S"]
+  0 -> "0R2" [style=solid]
+ "0R2" [label="R2", fillcolor=3, shape=diamond, style=filled]
+  1 [label="State 1\n\l  1 S: INTEGER . S INTEGER\l"]
+  1 -> 1 [style=solid label="INTEGER"]
+  1 -> 3 [style=dashed label="S"]
+  1 -> "1R2d" [label="[INTEGER]", style=solid]
+ "1R2d" [label="R2", fillcolor=5, shape=diamond, style=filled]
+  2 [label="State 2\n\l  0 $accept: S . $end\l"]
+  2 -> 4 [style=solid label="$end"]
+  3 [label="State 3\n\l  1 S: INTEGER S . INTEGER\l"]
+  3 -> 5 [style=solid label="INTEGER"]
+  4 [label="State 4\n\l  0 $accept: S $end .\l"]
+  4 -> "4R0" [style=solid]
+ "4R0" [label="Acc", fillcolor=1, shape=diamond, style=filled]
+  5 [label="State 5\n\l  1 S: INTEGER S INTEGER .\l"]
+  5 -> "5R1" [style=solid]
+ "5R1" [label="R1", fillcolor=3, shape=diamond, style=filled]
+}
