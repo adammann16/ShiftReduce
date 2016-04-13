@@ -1,0 +1,39 @@
+// 由 GNU Bison 3.0.2 生成。
+// 向 <bug-bison@gnu.org> 报告问题。
+// 主页：<http://www.gnu.org/software/bison/>。
+
+digraph "grammar5.y"
+{
+  node [fontname = courier, shape = box, colorscheme = paired6]
+  edge [fontname = courier]
+
+  0 [label="State 0\n\l  0 $accept: . condition $end\l"]
+  0 -> 1 [style=solid label="NUM"]
+  0 -> 2 [style=dashed label="condition"]
+  0 -> 3 [style=dashed label="expression"]
+  1 [label="State 1\n\l  2 condition: NUM . '<' NUM\l  3 expression: NUM . '<' NUM\l  4           | NUM . '+' NUM\l  5           | NUM .\l"]
+  1 -> 4 [style=solid label="'<'"]
+  1 -> 5 [style=solid label="'+'"]
+  1 -> "1R5" [style=solid]
+ "1R5" [label="R5", fillcolor=3, shape=diamond, style=filled]
+  2 [label="State 2\n\l  0 $accept: condition . $end\l"]
+  2 -> 6 [style=solid label="$end"]
+  3 [label="State 3\n\l  1 condition: expression .\l"]
+  3 -> "3R1" [style=solid]
+ "3R1" [label="R1", fillcolor=3, shape=diamond, style=filled]
+  4 [label="State 4\n\l  2 condition: NUM '<' . NUM\l  3 expression: NUM '<' . NUM\l"]
+  4 -> 7 [style=solid label="NUM"]
+  5 [label="State 5\n\l  4 expression: NUM '+' . NUM\l"]
+  5 -> 8 [style=solid label="NUM"]
+  6 [label="State 6\n\l  0 $accept: condition $end .\l"]
+  6 -> "6R0" [style=solid]
+ "6R0" [label="Acc", fillcolor=1, shape=diamond, style=filled]
+  7 [label="State 7\n\l  2 condition: NUM '<' NUM .\l  3 expression: NUM '<' NUM .\l"]
+  7 -> "7R2" [style=solid]
+ "7R2" [label="R2", fillcolor=3, shape=diamond, style=filled]
+  7 -> "7R3d" [label="[$end]", style=solid]
+ "7R3d" [label="R3", fillcolor=5, shape=diamond, style=filled]
+  8 [label="State 8\n\l  4 expression: NUM '+' NUM .\l"]
+  8 -> "8R4" [style=solid]
+ "8R4" [label="R4", fillcolor=3, shape=diamond, style=filled]
+}

@@ -1,0 +1,45 @@
+// 由 GNU Bison 3.0.2 生成。
+// 向 <bug-bison@gnu.org> 报告问题。
+// 主页：<http://www.gnu.org/software/bison/>。
+
+digraph "grammar4.y"
+{
+  node [fontname = courier, shape = box, colorscheme = paired6]
+  edge [fontname = courier]
+
+  0 [label="State 0\n\l  0 $accept: . A $end\l"]
+  0 -> 1 [style=dashed label="A"]
+  0 -> "0R1" [style=solid]
+ "0R1" [label="R1", fillcolor=3, shape=diamond, style=filled]
+  1 [label="State 1\n\l  0 $accept: A . $end\l  2 A: A . B\l  3  | A . C\l"]
+  1 -> 2 [style=solid label="$end"]
+  1 -> 3 [style=dashed label="B"]
+  1 -> 4 [style=dashed label="C"]
+  1 -> "1R4d" [label="[$end]", style=solid]
+ "1R4d" [label="R4", fillcolor=5, shape=diamond, style=filled]
+  1 -> "1R4" [style=solid]
+ "1R4" [label="R4", fillcolor=3, shape=diamond, style=filled]
+  1 -> "1R6d" [label="[$end, ID, NUM]", style=solid]
+ "1R6d" [label="R6", fillcolor=5, shape=diamond, style=filled]
+  2 [label="State 2\n\l  0 $accept: A $end .\l"]
+  2 -> "2R0" [style=solid]
+ "2R0" [label="Acc", fillcolor=1, shape=diamond, style=filled]
+  3 [label="State 3\n\l  2 A: A B .\l  5 B: B . ID\l"]
+  3 -> 5 [style=solid label="ID"]
+  3 -> "3R2d" [label="[ID]", style=solid]
+ "3R2d" [label="R2", fillcolor=5, shape=diamond, style=filled]
+  3 -> "3R2" [style=solid]
+ "3R2" [label="R2", fillcolor=3, shape=diamond, style=filled]
+  4 [label="State 4\n\l  3 A: A C .\l  7 C: C . NUM\l"]
+  4 -> 6 [style=solid label="NUM"]
+  4 -> "4R3d" [label="[NUM]", style=solid]
+ "4R3d" [label="R3", fillcolor=5, shape=diamond, style=filled]
+  4 -> "4R3" [style=solid]
+ "4R3" [label="R3", fillcolor=3, shape=diamond, style=filled]
+  5 [label="State 5\n\l  5 B: B ID .\l"]
+  5 -> "5R5" [style=solid]
+ "5R5" [label="R5", fillcolor=3, shape=diamond, style=filled]
+  6 [label="State 6\n\l  7 C: C NUM .\l"]
+  6 -> "6R7" [style=solid]
+ "6R7" [label="R7", fillcolor=3, shape=diamond, style=filled]
+}

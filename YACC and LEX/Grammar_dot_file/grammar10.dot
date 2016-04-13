@@ -1,0 +1,36 @@
+// 由 GNU Bison 3.0.2 生成。
+// 向 <bug-bison@gnu.org> 报告问题。
+// 主页：<http://www.gnu.org/software/bison/>。
+
+digraph "grammar10.y"
+{
+  node [fontname = courier, shape = box, colorscheme = paired6]
+  edge [fontname = courier]
+
+  0 [label="State 0\n\l  0 $accept: . S $end\l"]
+  0 -> 1 [style=solid label="STRING"]
+  0 -> 2 [style=dashed label="S"]
+  0 -> 3 [style=dashed label="T"]
+  0 -> "0R2" [style=solid]
+ "0R2" [label="R2", fillcolor=3, shape=diamond, style=filled]
+  0 -> "0R4d" [label="[$end]", style=solid]
+ "0R4d" [label="R4", fillcolor=5, shape=diamond, style=filled]
+  1 [label="State 1\n\l  3 T: STRING . INTEGER T\l"]
+  1 -> 4 [style=solid label="INTEGER"]
+  2 [label="State 2\n\l  0 $accept: S . $end\l"]
+  2 -> 5 [style=solid label="$end"]
+  3 [label="State 3\n\l  1 S: T .\l"]
+  3 -> "3R1" [style=solid]
+ "3R1" [label="R1", fillcolor=3, shape=diamond, style=filled]
+  4 [label="State 4\n\l  3 T: STRING INTEGER . T\l"]
+  4 -> 1 [style=solid label="STRING"]
+  4 -> 6 [style=dashed label="T"]
+  4 -> "4R4" [style=solid]
+ "4R4" [label="R4", fillcolor=3, shape=diamond, style=filled]
+  5 [label="State 5\n\l  0 $accept: S $end .\l"]
+  5 -> "5R0" [style=solid]
+ "5R0" [label="Acc", fillcolor=1, shape=diamond, style=filled]
+  6 [label="State 6\n\l  3 T: STRING INTEGER T .\l"]
+  6 -> "6R3" [style=solid]
+ "6R3" [label="R3", fillcolor=3, shape=diamond, style=filled]
+}
