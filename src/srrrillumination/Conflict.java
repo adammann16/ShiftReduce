@@ -9,7 +9,12 @@ package srrrillumination;
  *
  * @author v3b2
  */
-public class Token_Expecting_Shift {
-    String expectedItem;
-    Token_State shiftGotoState;
+public class Conflict {
+    public String state;
+    public String conflictType;
+    public Conflict(String state, String conflictType)
+    {
+        this.state = state;
+        this.conflictType = conflictType;
+    }
 }

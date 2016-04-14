@@ -1,0 +1,35 @@
+// 由 GNU Bison 3.0.2 生成。
+// 向 <bug-bison@gnu.org> 报告问题。
+// 主页：<http://www.gnu.org/software/bison/>。
+
+digraph "grammar2.y"
+{
+  node [fontname = courier, shape = box, colorscheme = paired6]
+  edge [fontname = courier]
+
+  0 [label="State 0\n\l  0 $accept: . list $end\l"]
+  0 -> 1 [style=solid label="ID"]
+  0 -> 2 [style=dashed label="list"]
+  1 [label="State 1\n\l  1 list: ID .\l"]
+  1 -> "1R1" [style=solid]
+ "1R1" [label="R1", fillcolor=3, shape=diamond, style=filled]
+  2 [label="State 2\n\l  0 $accept: list . $end\l  2 list: list . comma ID\l  3     | list . ','\l"]
+  2 -> 3 [style=solid label="$end"]
+  2 -> 4 [style=solid label="','"]
+  2 -> 5 [style=dashed label="comma"]
+  2 -> "2R5" [style=solid]
+ "2R5" [label="R5", fillcolor=3, shape=diamond, style=filled]
+  3 [label="State 3\n\l  0 $accept: list $end .\l"]
+  3 -> "3R0" [style=solid]
+ "3R0" [label="Acc", fillcolor=1, shape=diamond, style=filled]
+  4 [label="State 4\n\l  3 list: list ',' .\l  4 comma: ',' .\l"]
+  4 -> "4R3" [style=solid]
+ "4R3" [label="R3", fillcolor=3, shape=diamond, style=filled]
+  4 -> "4R4d" [label="[ID]", style=solid]
+ "4R4d" [label="R4", fillcolor=5, shape=diamond, style=filled]
+  5 [label="State 5\n\l  2 list: list comma . ID\l"]
+  5 -> 6 [style=solid label="ID"]
+  6 [label="State 6\n\l  2 list: list comma ID .\l"]
+  6 -> "6R2" [style=solid]
+ "6R2" [label="R2", fillcolor=3, shape=diamond, style=filled]
+}

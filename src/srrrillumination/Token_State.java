@@ -14,4 +14,13 @@ import java.util.ArrayList;
 public class Token_State {
     ArrayList<Token_State> gotoStates;
     ArrayList<Token_State> shiftStates;
+    boolean srConflict;
+    boolean rrConflict;
+    
+    Token_State(){
+        gotoStates = new ArrayList<>();
+        shiftStates = new ArrayList<>();
+        srConflict = false;
+        rrConflict = false;
+    }
 }

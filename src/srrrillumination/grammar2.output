@@ -1,0 +1,183 @@
+Terminals unused in grammar
+
+   NUM
+   STRING
+   SHARED
+   PRIVATE
+   INTEGER
+   SEMAPHORE
+   RESTRICT
+   PROGRAM
+   PROCEDURE
+   PROCESS
+   P
+   V
+   ASSERT
+   PRINT
+   WHILE
+   IF
+   THEN
+   ELSE
+   PLUS
+   MINUS
+   TIMES
+   MOD
+   AND
+   OR
+   NOT
+   LE
+   LT
+   EQ
+   GE
+   GT
+   NE
+   ASSIGN
+   LPAREN
+   RPAREN
+   LBRACE
+   RBRACE
+   LBRACKET
+   RBRACKET
+   COMMA
+   SEMICOLON
+   TRUE
+
+
+Rules useless in parser due to conflicts
+
+    4 comma: ','
+
+
+State 4conflicts: 1 reduce/reduce
+
+
+Grammar
+
+    0 $accept: list $end
+
+    1 list: ID
+    2     | list comma ID
+    3     | list ','
+
+    4 comma: ','
+    5      | /* epsilon */
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+',' (44) 3 4
+error (256)
+ID (258) 1 2
+NUM (259)
+STRING (260)
+SHARED (261)
+PRIVATE (262)
+INTEGER (263)
+SEMAPHORE (264)
+RESTRICT (265)
+PROGRAM (266)
+PROCEDURE (267)
+PROCESS (268)
+P (269)
+V (270)
+ASSERT (271)
+PRINT (272)
+WHILE (273)
+IF (274)
+THEN (275)
+ELSE (276)
+PLUS (277)
+MINUS (278)
+TIMES (279)
+MOD (280)
+AND (281)
+OR (282)
+NOT (283)
+LE (284)
+LT (285)
+EQ (286)
+GE (287)
+GT (288)
+NE (289)
+ASSIGN (290)
+LPAREN (291)
+RPAREN (292)
+LBRACE (293)
+RBRACE (294)
+LBRACKET (295)
+RBRACKET (296)
+COMMA (297)
+SEMICOLON (298)
+TRUE (299)
+
+
+Nonterminals, with rules where they appear
+
+$accept (46)
+    on left: 0
+list (47)
+    on left: 1 2 3, on right: 0 2 3
+comma (48)
+    on left: 4 5, on right: 2
+
+
+State 0
+
+    0 $accept: . list $end
+
+    ID  shift, and go to state 1
+
+    list  go to state 2
+
+
+State 1
+
+    1 list: ID .
+
+    $default  reduce using rule 1 (list)
+
+
+State 2
+
+    0 $accept: list . $end
+    2 list: list . comma ID
+    3     | list . ','
+
+    $end  shift, and go to state 3
+    ','   shift, and go to state 4
+
+    $default  reduce using rule 5 (comma)
+
+    comma  go to state 5
+
+
+State 3
+
+    0 $accept: list $end .
+
+    $default  accept
+
+
+State 4
+
+    3 list: list ',' .
+    4 comma: ',' .
+
+    ID        reduce using rule 3 (list)
+    ID        [reduce using rule 4 (comma)]
+    $default  reduce using rule 3 (list)
+
+
+State 5
+
+    2 list: list comma . ID
+
+    ID  shift, and go to state 6
+
+
+State 6
+
+    2 list: list comma ID .
+
+    $default  reduce using rule 2 (list)

@@ -6,6 +6,7 @@
 package srrrillumination;
 
 import java.awt.Color;
+import java.io.Console;
 
 /**
  *
@@ -18,6 +19,10 @@ public class SRRRIllumination {
      */
     public static void main(String[] args) {
         //Code to create GUI
+        
+        ConflictFinder cf = new ConflictFinder("C:\\Users\\v3b2\\Documents\\Mega\\school stuff\\2016 spring\\SRRRIllumination\\src\\srrrillumination\\grammar2.output",
+                "C:\\Users\\v3b2\\Documents\\Mega\\school stuff\\2016 spring\\SRRRIllumination\\src\\srrrillumination\\grammar4.dot");
+        System.out.println(cf.makeGraphFile());
         GUI g = new GUI();        
         g.setTitle("Shift Reduce Conflict Illumination");
         g.getContentPane().setBackground(new Color(240,240,240));

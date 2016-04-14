@@ -9,7 +9,14 @@ package srrrillumination;
  *
  * @author v3b2
  */
-public class Token_Expecting_Reduce {
-    String expectedItem;
-    Token_State gotoState;
+public class Node {
+    String state;
+    String line;
+    String gotoState;
+    public Node(String state, String gotoState, String line)
+    {
+        this.state = state;
+        this.gotoState = gotoState;
+        this.line = line;
+    }
 }
