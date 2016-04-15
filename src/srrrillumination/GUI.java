@@ -248,10 +248,10 @@ public class GUI extends javax.swing.JFrame {
     private void browseOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseOutputActionPerformed
                
         // Grabs y.output file that will be passed to scanner written by Logan
-        JFileChooser inFile = new JFileChooser();
-        inFile.showOpenDialog(null);
-        File input =  inFile.getSelectedFile();
-        String outputFilename = input.getAbsolutePath();
+        JFileChooser inFile1 = new JFileChooser();
+        inFile1.showOpenDialog(null);
+        File input1 =  inFile1.getSelectedFile();
+        String outputFilename = input1.getAbsolutePath();
         outputInput.setText(outputFilename);
         
     }//GEN-LAST:event_browseOutputActionPerformed
@@ -263,10 +263,10 @@ public class GUI extends javax.swing.JFrame {
     private void browseDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseDotActionPerformed
         
         // Grabs file.dot file that will be passed to conflictFinder
-        JFileChooser inFile = new JFileChooser();
-        inFile.showOpenDialog(null);
-        File input =  inFile.getSelectedFile();
-        String dotFilename = input.getAbsolutePath();
+        JFileChooser inFile2 = new JFileChooser();
+        inFile2.showOpenDialog(null);
+        File input2 =  inFile2.getSelectedFile();
+        String dotFilename = input2.getAbsolutePath();
         dotInput.setText(dotFilename);
     }//GEN-LAST:event_browseDotActionPerformed
 
