@@ -7,6 +7,7 @@ package srrrillumination;
 
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,65 +31,76 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        submitButton = new javax.swing.JButton();
-        inputField = new javax.swing.JTextField();
-        browseButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
+        outputInput = new javax.swing.JTextField();
+        browseOutput = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         grammarField = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        conflictsField = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jPanel1 = new javax.swing.JPanel();
+        dotInput = new javax.swing.JTextField();
+        browseDot = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        graphPane = new javax.swing.JTabbedPane();
+        submit = new javax.swing.JButton();
+        helpButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(204, 204, 204));
         setLocation(new java.awt.Point(15, 15));
         setName("baseFrame"); // NOI18N
 
-        submitButton.setBackground(new java.awt.Color(204, 204, 204));
-        submitButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        submitButton.setText("Submit");
-        submitButton.setToolTipText("Submit output for processing");
-        submitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
+        clearButton.setBackground(new java.awt.Color(204, 204, 204));
+        clearButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        clearButton.setText("Clear");
+        clearButton.setToolTipText("Submit for processing");
+        clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
+                clearButtonActionPerformed(evt);
             }
         });
 
-        inputField.addActionListener(new java.awt.event.ActionListener() {
+        outputInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputFieldActionPerformed(evt);
+                outputInputActionPerformed(evt);
             }
         });
 
-        browseButton.setBackground(new java.awt.Color(204, 204, 204));
-        browseButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        browseButton.setText("Browse");
-        browseButton.setToolTipText("Browse files on computer");
-        browseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        browseButton.addActionListener(new java.awt.event.ActionListener() {
+        browseOutput.setBackground(new java.awt.Color(204, 204, 204));
+        browseOutput.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        browseOutput.setText("Browse");
+        browseOutput.setToolTipText("Browse files on computer");
+        browseOutput.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browseOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                browseButtonActionPerformed(evt);
+                browseOutputActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Select a YACC output file to be processed, then select Submit:");
+        jLabel1.setText("Select a YACC output file to be processed:");
 
+        grammarField.setEditable(false);
         grammarField.setColumns(20);
+        grammarField.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        grammarField.setLineWrap(true);
         grammarField.setRows(5);
+        grammarField.setToolTipText("");
+        grammarField.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(grammarField);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        conflictsField.setEditable(false);
+        conflictsField.setColumns(20);
+        conflictsField.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
+        conflictsField.setLineWrap(true);
+        conflictsField.setRows(5);
+        conflictsField.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane2.setViewportView(conflictsField);
 
         jLabel3.setText("Conflicts:");
 
@@ -96,131 +108,193 @@ public class GUI extends javax.swing.JFrame {
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Shift | Reduce");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel5.setText("Conflict Illuminator");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("Conflict Illuminater");
+        dotInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dotInputActionPerformed(evt);
+            }
+        });
 
-        jInternalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder("Finite Automata"));
-        jInternalFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        jInternalFrame1.setAutoscrolls(true);
-        jInternalFrame1.setDesktopIcon(null);
+        browseDot.setBackground(new java.awt.Color(204, 204, 204));
+        browseDot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        browseDot.setText("Browse");
+        browseDot.setToolTipText("Browse files on computer");
+        browseDot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browseDot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browseDotActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel2.setText("Select the dot file created from the output file:");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Finite Automata", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        submit.setBackground(new java.awt.Color(204, 204, 204));
+        submit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        submit.setText("Submit");
+        submit.setToolTipText("Submit for processing");
+        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        helpButton.setBackground(new java.awt.Color(204, 204, 204));
+        helpButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        helpButton.setText("Help");
+        helpButton.setToolTipText("Browse files on computer");
+        helpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(outputInput)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(browseOutput))
+                    .addComponent(jScrollPane2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(dotInput)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(browseDot))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(submitButton)
-                        .addGap(76, 76, 76)
-                        .addComponent(browseButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inputField)
-                                .addComponent(jScrollPane1)
-                                .addComponent(jScrollPane2)))))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addGap(0, 24, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(helpButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(graphPane, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(609, 609, 609)
-                        .addComponent(jInternalFrame1, 0, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(browseButton)
-                            .addComponent(submitButton))
-                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(browseOutput)
+                                    .addComponent(outputInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(browseDot)
+                                    .addComponent(dotInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(86, 86, 86))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(submit)
+                                    .addComponent(clearButton)
+                                    .addComponent(helpButton))
+                                .addGap(37, 37, 37)))
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(graphPane, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
 
-    }//GEN-LAST:event_submitButtonActionPerformed
+    }//GEN-LAST:event_clearButtonActionPerformed
 
-    private void inputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFieldActionPerformed
+    private void outputInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputFieldActionPerformed
+    }//GEN-LAST:event_outputInputActionPerformed
 
-    private void browseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseButtonActionPerformed
+    private void browseOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseOutputActionPerformed
                
         // Grabs y.output file that will be passed to scanner written by Logan
         JFileChooser inFile = new JFileChooser();
         inFile.showOpenDialog(null);
         File input =  inFile.getSelectedFile();
-        String filename = input.getAbsolutePath();
-        inputField.setText(filename);
+        String outputFilename = input.getAbsolutePath();
+        outputInput.setText(outputFilename);
         
-        // Function to take path of file and feed it into Logan's Scanner
+    }//GEN-LAST:event_browseOutputActionPerformed
+
+    private void dotInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dotInputActionPerformed
+
+    private void browseDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseDotActionPerformed
         
-        // Function to take Logan's output of tokens and feed into Andrew's program
+        // Grabs file.dot file that will be passed to conflictFinder
+        JFileChooser inFile = new JFileChooser();
+        inFile.showOpenDialog(null);
+        File input =  inFile.getSelectedFile();
+        String dotFilename = input.getAbsolutePath();
+        dotInput.setText(dotFilename);
+    }//GEN-LAST:event_browseDotActionPerformed
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        // Button to clear all fields within GUI
+       outputInput.setText("");
+       dotInput.setText("");
+       conflictsField.setText("");
+       grammarField.setText("");
+       
+       //add code to start new graph within Tabbed Pane (graphPane)
+       
+    }//GEN-LAST:event_submitActionPerformed
+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        // Help Dialog
+        JOptionPane frame = new JOptionPane();
+        JOptionPane.showMessageDialog(frame, "To start, browse computer for a \".output\" file created using YACC."
+                + "\n"
+                + "Next, browse computer for a \".dot\" file that was created from the given output file."
+                + "\n"
+                + "Now, click \"Submit\" to process files. "
+                + "\n\nAn illustration of the given grammar"
+                + " should appear in the right-section of the application."
+                + "\n\nFor additional information, locate the provided user manual.", "Conflict"
+                        + " Illuminator Help",JOptionPane.INFORMATION_MESSAGE);                 
         
-    }//GEN-LAST:event_browseButtonActionPerformed
+    }//GEN-LAST:event_helpButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,20 +332,23 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton browseButton;
+    private javax.swing.JButton browseDot;
+    private javax.swing.JButton browseOutput;
+    private javax.swing.JButton clearButton;
+    private javax.swing.JTextArea conflictsField;
+    private javax.swing.JTextField dotInput;
     private javax.swing.JTextArea grammarField;
-    private javax.swing.JTextField inputField;
-    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JTabbedPane graphPane;
+    private javax.swing.JButton helpButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton submitButton;
+    private javax.swing.JTextField outputInput;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }
